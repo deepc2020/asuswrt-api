@@ -121,6 +121,7 @@ class AsusWRT:
 
         clients = response.get('get_clientlist', {})
         clients.pop('maclist', None)
+        clients.pop('ClientAPILevel', None)
         clients = list(map(Client, list(clients.values())))
 
         update_interface('2g', '2GHz')
